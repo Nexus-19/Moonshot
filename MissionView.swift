@@ -23,8 +23,12 @@ struct MissionView: View {
                         .scaledToFit()
                         .frame(maxWidth: geometry.size.width * 0.7)
                         .padding(.top)
+                    Text("Launch Date: \(mission.formattedLaunchDate)")
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     Text(mission.description)
                         .padding()
+                        
+                        
                     ForEach(astronauts,id: \.role){ crewMember in
                         NavigationLink(destination:AstronautView(astronaut: crewMember.astronaut)){
                             HStack{
